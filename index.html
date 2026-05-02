@@ -405,18 +405,21 @@
       width: 380px; height: 380px;
     }
     .photo-border {
-      position: absolute; inset: -4px;
-      border-radius: 50%;
-      background: var(--gradient-neon);
-      animation: spin 3s linear infinite;
-      z-index: 0;
-    }
-    .photo-border::before {
-      content: '';
-      position: absolute; inset: 3px;
-      border-radius: 50%;
-      background: var(--black);
-    }
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--gradient-neon);
+  animation: spin 3s linear infinite;
+  z-index: 0;
+}
+
+.hero-photo {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+}
     @keyframes spin { to { transform: rotate(360deg); } }
     .photo-wrap {
       position: absolute; inset: 6px;
