@@ -1854,10 +1854,7 @@ function initHeroAnimations() {
     onEnter: animateBars
   });
 
-  gsap.from('.project-card', {
-    scrollTrigger: { trigger:'#projects', start:'top 80%' },
-    opacity:0, y:40, stagger:0.12, duration:0.6
-  });
+  ScrollTrigger.refresh();
 }
 
 // Fallback: if GSAP doesn't load
