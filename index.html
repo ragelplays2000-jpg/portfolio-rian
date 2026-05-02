@@ -270,7 +270,8 @@
       display: inline-flex; align-items: center; gap: 16px;
       margin-bottom: 12px;
     }
-    .section-title::before {
+    .section-title::before,
+    .section-title::after {
       content: '';
       display: block; width: 40px; height: 2px;
       background: var(--gradient-neon);
@@ -417,7 +418,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 0%;
+  object-position: center 22%;
   border-radius: 50%;
 }
     @keyframes spin { to { transform: rotate(360deg); } }
@@ -468,6 +469,8 @@
     ═══════════════════════════════════════ */
     #about {
       padding: 100px 60px;
+    }
+    .about-inner {
       max-width: 1200px; margin: 0 auto;
     }
     .about-grid {
@@ -981,6 +984,7 @@
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       #about, #skills, #contact, footer { padding-left: 32px; padding-right: 32px; }
+      #about, #skills { padding-top: 60px; padding-bottom: 60px; }
       #projects { padding-left: 32px; padding-right: 32px; }
     }
     @media (max-width: 767px) {
@@ -1078,6 +1082,7 @@
 
 <!-- ABOUT -->
 <section id="about">
+  <div class="about-inner">
   <div class="section-header">
     <h2 class="section-title">&lt; Sobre Mim /&gt;</h2>
     <p class="section-subtitle">Tecnologia, experiência e paixão por resultados reais</p>
@@ -1124,6 +1129,7 @@
         <div class="stat-label">Suporte</div>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
@@ -1299,6 +1305,7 @@
     <div class="project-card" data-cats="web" onclick="openLightbox(0)">
       <div class="project-thumb">
         <div class="project-thumb-icon">📸</div>
+        <img src="assets/img/projects/davi.jpg" alt="Esportes Victurino">
         <div class="project-status status-green">Em Produção</div>
       </div>
       <div class="project-body">
@@ -1317,6 +1324,7 @@
     <div class="project-card" data-cats="automacao ia" onclick="openLightbox(1)">
       <div class="project-thumb">
         <div class="project-thumb-icon">⚡</div>
+        <img src="assets/img/projects/dispatchql.jpg" alt="DispatchIQ">
         <div class="project-status status-purple">Em Uso</div>
       </div>
       <div class="project-body">
@@ -1335,6 +1343,7 @@
     <div class="project-card" data-cats="ia web" onclick="openLightbox(2)">
       <div class="project-thumb">
         <div class="project-thumb-icon">🚀</div>
+        <img src="assets/img/projects/marley.jpg" alt="Sites e Landing Pages Pro">
         <div class="project-status status-blue">Operacional</div>
       </div>
       <div class="project-body">
@@ -1353,6 +1362,7 @@
     <div class="project-card" data-cats="web design" onclick="openLightbox(3)">
       <div class="project-thumb">
         <div class="project-thumb-icon">💻</div>
+        <img src="assets/img/projects/projeto-portfolio.jpg" alt="Portfólio Pessoal Dark Neon">
         <div class="project-status status-pink">Você está aqui!</div>
       </div>
       <div class="project-body">
@@ -1546,8 +1556,8 @@ const isMobile = window.innerWidth < 768;
 const PARTICLE_COUNT = isMobile ? 40 : 80;
 
 function resizeCanvas() {
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
