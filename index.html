@@ -2368,11 +2368,11 @@ function initHeroAnimations() {
     .from('.hero-photo-container', { opacity:0, scale:0.8, duration:0.8, ease:'back.out(1.7)' }, '-=0.6')
     .call(type);
 
-  // Scroll reveals
-  const sections = ['#about', '#skills', '#services', '#process', '#projects', '#testimonials', '#faq', '#results', '#contact'];
+  // Scroll reveals — apenas seções originais (novas seções usam IntersectionObserver)
+  const sections = ['#about', '#skills', '#projects', '#contact'];
   sections.forEach(s => {
     gsap.from(`${s} .section-header`, {
-      scrollTrigger: { trigger: s, start:'top 80%' },
+      scrollTrigger: { trigger: s, start:'top 80%', once: true },
       opacity:0, y:40, duration:0.7
     });
   });
@@ -2392,36 +2392,6 @@ function initHeroAnimations() {
   gsap.from('.contact-form .form-group', {
     scrollTrigger: { trigger:'#contact', start:'top 80%' },
     opacity:0, y:20, stagger:0.1, duration:0.5
-  });
-
-  // Services
-  gsap.from('.service-card', {
-    scrollTrigger: { trigger:'#services', start:'top 75%' },
-    opacity:0, y:40, stagger:0.15, duration:0.6
-  });
-
-  // Process steps
-  gsap.from('.process-step', {
-    scrollTrigger: { trigger:'#process', start:'top 75%' },
-    opacity:0, y:30, stagger:0.12, duration:0.5
-  });
-
-  // Testimonials
-  gsap.from('.testimonial-card', {
-    scrollTrigger: { trigger:'#testimonials', start:'top 80%' },
-    opacity:0, y:40, stagger:0.2, duration:0.6
-  });
-
-  // FAQ
-  gsap.from('.faq-item', {
-    scrollTrigger: { trigger:'#faq', start:'top 80%' },
-    opacity:0, x:-20, stagger:0.1, duration:0.5
-  });
-
-  // Results
-  gsap.from('.result-card', {
-    scrollTrigger: { trigger:'#results', start:'top 80%' },
-    opacity:0, y:30, stagger:0.12, duration:0.5
   });
 
   // Count-up
@@ -2451,6 +2421,45 @@ window.addEventListener('load', () => {
   animateBars();
   countUp();
 });
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL (IntersectionObserver)
+   Usado nas novas seções em vez de GSAP
+═══════════════════════════════════════ */
+(function() {
+  const revealSelectors = [
+    '#services .section-header',
+    '#process .section-header',
+    '#testimonials .section-header',
+    '#faq .section-header',
+    '#results .section-header',
+    '.service-card',
+    '.testimonial-card',
+    '.result-card',
+    '.process-step',
+    '.faq-item'
+  ];
+  const allEls = document.querySelectorAll(revealSelectors.join(','));
+
+  // Prepare initial state via CSS class
+  allEls.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity 0.55s ease ' + (i % 4) * 0.1 + 's, transform 0.55s ease ' + (i % 4) * 0.1 + 's';
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  allEls.forEach(el => io.observe(el));
+})();
 
 /* ═══════════════════════════════════════
    SKILL BARS ANIMATE
