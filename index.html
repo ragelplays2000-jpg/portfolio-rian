@@ -933,6 +933,211 @@
     #back-top:hover { transform: translateY(-3px); }
 
     /* ═══════════════════════════════════════
+       SERVICES SECTION
+    ═══════════════════════════════════════ */
+    #services { padding: 100px 60px; }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 16px; padding: 36px 32px;
+      transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple-light);
+      box-shadow: 0 0 32px rgba(168,85,247,0.2);
+    }
+    .service-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+    .service-title {
+      font-family: var(--font-title); font-size: 18px;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .service-desc { font-size: 14px; color: var(--gray-text); line-height: 1.8; margin-bottom: 20px; }
+    .service-features { list-style: none; margin-bottom: 28px; }
+    .service-features li {
+      font-size: 13px; color: var(--gray-text);
+      padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .service-features li::before { content: '▸'; color: var(--purple-light); flex-shrink: 0; }
+    .service-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 22px; background: var(--gradient-neon);
+      color: #fff; border-radius: 8px; font-size: 14px; font-weight: 600;
+      transition: var(--transition); box-shadow: 0 0 16px rgba(168,85,247,0.3);
+    }
+    .service-cta:hover { transform: translateY(-2px); box-shadow: 0 0 28px rgba(168,85,247,0.5); }
+
+    /* ═══════════════════════════════════════
+       HOW IT WORKS SECTION
+    ═══════════════════════════════════════ */
+    #process {
+      padding: 100px 60px;
+      background: linear-gradient(180deg,transparent 0%,rgba(168,85,247,0.03) 50%,transparent 100%);
+    }
+    .process-inner { max-width: 1200px; margin: 0 auto; }
+    .process-steps {
+      display: flex; align-items: flex-start; gap: 0;
+      position: relative;
+    }
+    .process-steps::before {
+      content: ''; position: absolute;
+      top: 43px; left: calc(10% + 44px); right: calc(10% + 44px);
+      height: 2px; background: linear-gradient(90deg,#a855f7,#ec4899);
+      opacity: 0.25; z-index: 0;
+    }
+    .process-step {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; text-align: center;
+      padding: 0 12px; position: relative; z-index: 1;
+    }
+    .step-icon-wrap {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      border: 2px solid rgba(168,85,247,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; margin-bottom: 16px; position: relative;
+      transition: var(--transition); box-shadow: 0 0 24px rgba(168,85,247,0.15);
+    }
+    .step-icon-wrap:hover {
+      border-color: var(--purple-light);
+      box-shadow: 0 0 32px rgba(168,85,247,0.4);
+      transform: translateY(-4px);
+    }
+    .step-number {
+      position: absolute; top: -8px; right: -8px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--gradient-neon);
+      font-family: var(--font-title); font-size: 11px; font-weight: 700;
+      color: #fff; display: flex; align-items: center; justify-content: center;
+    }
+    .step-title { font-family: var(--font-title); font-size: 14px; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--gray-text); line-height: 1.7; margin-bottom: 12px; max-width: 180px; }
+    .step-tag {
+      display: inline-block;
+      background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.3);
+      color: var(--purple-neon); font-family: var(--font-code); font-size: 11px;
+      padding: 4px 10px; border-radius: 4px;
+    }
+
+    /* ═══════════════════════════════════════
+       TESTIMONIALS SECTION
+    ═══════════════════════════════════════ */
+    #testimonials { padding: 100px 60px; }
+    .testimonials-inner { max-width: 1200px; margin: 0 auto; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 32px; }
+    .testimonial-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 20px; padding: 40px 36px;
+      transition: var(--transition); position: relative;
+    }
+    .testimonial-card:hover {
+      border-color: var(--purple-light);
+      box-shadow: 0 0 40px rgba(168,85,247,0.15);
+      transform: translateY(-4px);
+    }
+    .testimonial-stars { display: flex; gap: 4px; margin-bottom: 20px; }
+    .testimonial-stars span { font-size: 18px; }
+    .testimonial-text {
+      font-size: 15px; color: var(--white);
+      line-height: 1.8; font-style: italic; margin-bottom: 28px;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 16px; }
+    .author-avatar {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--gradient-neon);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-title); font-size: 16px; font-weight: 700;
+      color: #fff; flex-shrink: 0;
+      box-shadow: 0 0 16px rgba(168,85,247,0.4);
+    }
+    .author-name { font-weight: 600; color: var(--white); margin-bottom: 4px; }
+    .author-role { font-size: 13px; color: var(--gray-text); }
+
+    /* ═══════════════════════════════════════
+       FAQ SECTION
+    ═══════════════════════════════════════ */
+    #faq {
+      padding: 100px 60px;
+      background: linear-gradient(180deg,transparent 0%,rgba(168,85,247,0.03) 50%,transparent 100%);
+    }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 12px; overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item.open { border-color: rgba(168,85,247,0.5); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 28px; text-align: left;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      color: var(--white); gap: 16px; transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--purple-neon); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1.5px solid rgba(168,85,247,0.5);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 18px; color: var(--purple-light);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      background: var(--gradient-neon); border-color: transparent;
+      color: #fff; transform: rotate(45deg);
+    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s; padding: 0 28px; }
+    .faq-answer.open { max-height: 300px; padding: 0 28px 22px; }
+    .faq-answer p { font-size: 14px; color: var(--gray-text); line-height: 1.8; }
+
+    /* ═══════════════════════════════════════
+       RESULTS SECTION
+    ═══════════════════════════════════════ */
+    #results { padding: 100px 60px; }
+    .results-inner { max-width: 1200px; margin: 0 auto; }
+    .results-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+    .result-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(168,85,247,0.2);
+      border-radius: 16px; padding: 36px 24px;
+      text-align: center; transition: var(--transition);
+    }
+    .result-card:hover {
+      border-color: var(--purple-light);
+      box-shadow: 0 0 32px rgba(168,85,247,0.2);
+      transform: translateY(-4px);
+    }
+    .result-icon { font-size: 36px; margin-bottom: 16px; }
+    .result-number {
+      font-family: var(--font-title);
+      font-size: clamp(26px,4vw,40px); font-weight: 900;
+      background: var(--gradient-neon);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 4px;
+      display: block;
+    }
+    .result-label { font-size: 13px; color: var(--purple-neon); font-family: var(--font-code); margin-bottom: 8px; }
+    .result-desc { font-size: 13px; color: var(--gray-text); }
+
+    /* project destaque badge */
+    .badge-destaque {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: linear-gradient(135deg,#f59e0b,#ef4444);
+      color: #fff; font-family: var(--font-code);
+      font-size: 10px; font-weight: 700;
+      padding: 3px 10px; border-radius: 4px;
+      letter-spacing: 1px; margin-bottom: 6px;
+    }
+
+    /* ═══════════════════════════════════════
        EASTER EGG — MATRIX
     ═══════════════════════════════════════ */
     #matrix-overlay {
@@ -986,6 +1191,13 @@
       #about, #skills, #contact, footer { padding-left: 32px; padding-right: 32px; }
       #about, #skills { padding-top: 48px; padding-bottom: 48px; }
       #projects { padding-left: 32px; padding-right: 32px; }
+      #services, #process, #testimonials, #faq, #results { padding-left: 32px; padding-right: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps::before { display: none; }
+      .process-step { flex: 0 0 50%; padding: 16px; }
+      .process-steps { flex-wrap: wrap; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 767px) {
       #cursor, #cursor-follower { display: none; }
@@ -998,6 +1210,9 @@
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
       #about, #skills { padding-top: 40px; padding-bottom: 40px; }
       .contact-grid { gap: 20px; }
+      .process-step { flex: 0 0 100%; }
+      .results-grid { grid-template-columns: 1fr 1fr; }
+      #services, #process, #testimonials, #faq, #results { padding-top: 60px; padding-bottom: 60px; }
     }
   </style>
 </head>
@@ -1022,7 +1237,8 @@
   <a href="#hero" class="nav-logo">Rian.dev</a>
   <nav>
     <a href="#about">Sobre</a>
-    <a href="#skills">Habilidades</a>
+    <a href="#services">Serviços</a>
+    <a href="#process">Processo</a>
     <a href="#projects">Projetos</a>
     <a href="#contact">Contato</a>
   </nav>
@@ -1041,7 +1257,8 @@
 <div class="mobile-overlay" id="mobile-overlay"></div>
 <div class="mobile-menu" id="mobile-menu">
   <a href="#about" class="mobile-nav-link">Sobre</a>
-  <a href="#skills" class="mobile-nav-link">Habilidades</a>
+  <a href="#services" class="mobile-nav-link">Serviços</a>
+  <a href="#process" class="mobile-nav-link">Processo</a>
   <a href="#projects" class="mobile-nav-link">Projetos</a>
   <a href="#contact" class="mobile-nav-link">Contato</a>
 </div>
@@ -1112,12 +1329,12 @@
     <div class="stats-grid">
       <div class="stat-card">
         <div class="stat-icon">⚡</div>
-        <div class="stat-number" data-target="3" data-suffix="+">0</div>
+        <div class="stat-number" data-target="2" data-suffix="+">0</div>
         <div class="stat-label">Anos de Experiência</div>
       </div>
       <div class="stat-card">
         <div class="stat-icon">🚀</div>
-        <div class="stat-number" data-target="10" data-suffix="+">0</div>
+        <div class="stat-number" data-target="5" data-suffix="+">0</div>
         <div class="stat-label">Projetos Entregues</div>
       </div>
       <div class="stat-card">
@@ -1127,7 +1344,7 @@
       </div>
       <div class="stat-card">
         <div class="stat-icon">🤖</div>
-        <div class="stat-number" data-target="0" data-custom="24/7">0</div>
+        <div class="stat-number" data-target="30" data-suffix=" dias">0</div>
         <div class="stat-label">Suporte</div>
       </div>
     </div>
@@ -1289,6 +1506,134 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-inner">
+    <div class="section-header">
+      <h2 class="section-title">&lt; Serviços /&gt;</h2>
+      <p class="section-subtitle">Soluções digitais para o seu negócio crescer</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span class="service-icon">🌐</span>
+        <div class="service-title">Sites &amp; Landing Pages</div>
+        <p class="service-desc">Sites profissionais responsivos e landing pages de alta conversão, com design moderno e foco em resultados reais.</p>
+        <ul class="service-features">
+          <li>Design exclusivo e responsivo</li>
+          <li>Otimizado para SEO e velocidade</li>
+          <li>Integração com WhatsApp</li>
+          <li>30 dias de suporte incluso</li>
+        </ul>
+        <a href="https://wa.me/5571981830988?text=Ol%C3%A1%21+Quero+um+site+profissional" class="service-cta" target="_blank">Quero Meu Site →</a>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">🤖</span>
+        <div class="service-title">Automação WhatsApp</div>
+        <p class="service-desc">Chatbots inteligentes e automações com IA para atendimento 24/7, qualificação de leads e aumento de vendas.</p>
+        <ul class="service-features">
+          <li>Atendimento automático 24/7</li>
+          <li>Qualificação e captura de leads</li>
+          <li>Integração com CRM e sistemas</li>
+          <li>Relatórios e métricas de uso</li>
+        </ul>
+        <a href="https://wa.me/5571981830988?text=Quero+automatizar+meu+WhatsApp+com+IA" class="service-cta" target="_blank">Automatizar Atendimento →</a>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">📊</span>
+        <div class="service-title">Sistemas de Gestão</div>
+        <p class="service-desc">Dashboards, ERPs e sistemas personalizados para organizar seu negócio, automatizar processos e tomar decisões com dados.</p>
+        <ul class="service-features">
+          <li>Dashboards com gráficos interativos</li>
+          <li>Gestão de clientes e projetos</li>
+          <li>Relatórios automáticos</li>
+          <li>Integração com Firebase / APIs</li>
+        </ul>
+        <a href="https://wa.me/5571981830988?text=Preciso+de+um+sistema+de+gest%C3%A3o+ERP" class="service-cta" target="_blank">Organizar Meu Negócio →</a>
+      </div>
+
+      <div class="service-card">
+        <span class="service-icon">✨</span>
+        <div class="service-title">Soluções Sob Medida</div>
+        <p class="service-desc">Projetos customizados que fogem do padrão. Se você tem uma ideia, eu tenho a tecnologia para transformá-la em realidade.</p>
+        <ul class="service-features">
+          <li>Análise gratuita do projeto</li>
+          <li>Stack moderna e escalável</li>
+          <li>Desenvolvimento ágil e transparente</li>
+          <li>Suporte pós-entrega garantido</li>
+        </ul>
+        <a href="https://wa.me/5571981830988?text=Preciso+de+uma+solu%C3%A7%C3%A3o+customizada" class="service-cta" target="_blank">Solicitar Orçamento →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="process">
+  <div class="process-inner">
+    <div class="section-header">
+      <h2 class="section-title">&lt; Como Funciona /&gt;</h2>
+      <p class="section-subtitle">Do primeiro contato ao deploy</p>
+    </div>
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-icon-wrap">
+          <span>📞</span>
+          <div class="step-number">01</div>
+        </div>
+        <div class="step-title">Briefing</div>
+        <p class="step-desc">Conversa de 15min no WhatsApp. Entendo sua necessidade, objetivo e público-alvo.</p>
+        <span class="step-tag">Grátis</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-icon-wrap">
+          <span>💡</span>
+          <div class="step-number">02</div>
+        </div>
+        <div class="step-title">Proposta</div>
+        <p class="step-desc">Envio escopo detalhado, prazo e investimento em até 24h.</p>
+        <span class="step-tag">24h</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-icon-wrap">
+          <span>🎨</span>
+          <div class="step-number">03</div>
+        </div>
+        <div class="step-title">Desenvolvimento</div>
+        <p class="step-desc">Crio seu projeto com atualizações frequentes e alinhamentos contínuos.</p>
+        <span class="step-tag">7-14 dias</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-icon-wrap">
+          <span>✅</span>
+          <div class="step-number">04</div>
+        </div>
+        <div class="step-title">Entrega</div>
+        <p class="step-desc">Deploy final, treinamento de uso e 30 dias de suporte incluso.</p>
+        <span class="step-tag">Garantia</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-icon-wrap">
+          <span>🚀</span>
+          <div class="step-number">05</div>
+        </div>
+        <div class="step-title">Crescimento</div>
+        <p class="step-desc">Manutenção mensal, ajustes e melhorias contínuas (opcional).</p>
+        <span class="step-tag">Opcional</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects">
   <div class="section-header">
@@ -1304,7 +1649,49 @@
   </div>
   <div class="projects-grid" id="projects-grid">
 
-    <div class="project-card" data-cats="web" onclick="openLightbox(0)">
+    <!-- Finance Dashboard — DESTAQUE -->
+    <div class="project-card" data-cats="web automacao ia" onclick="openLightbox(0)">
+      <div class="project-thumb">
+        <div class="project-thumb-icon">💰</div>
+        <img src="assets/img/projects/dispatchql.jpg" alt="Finance Dashboard">
+        <div class="project-status status-purple">Em Desenvolvimento</div>
+      </div>
+      <div class="project-body">
+        <div class="badge-destaque">⭐ MAIS COMPLEXO</div>
+        <div class="project-title">Finance Dashboard — Gestão Financeira</div>
+        <p class="project-desc">Dashboard financeiro completo para desenvolvedores freelancers com gestão de clientes, projetos, vendas e relatórios. Gráficos interativos, métricas em tempo real e modo gravação para YouTube.</p>
+        <div class="project-tags">
+          <span class="tag">React</span><span class="tag">Firebase</span><span class="tag">Tailwind</span><span class="tag">Recharts</span><span class="tag">Firestore</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://finance-dashboard-4z2.pages.dev" class="btn-demo" target="_blank" onclick="event.stopPropagation()">Ver Demo →</a>
+          <a href="https://github.com/ragelplays2000-jpg/finance-dashboard" class="btn-code" target="_blank" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FF Performance -->
+    <div class="project-card" data-cats="web design" onclick="openLightbox(1)">
+      <div class="project-thumb">
+        <div class="project-thumb-icon">🥇</div>
+        <img src="assets/img/projects/marley.jpg" alt="FF Performance">
+        <div class="project-status status-green">Em Produção</div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">FF Performance — Coach de Futebol</div>
+        <p class="project-desc">Landing page profissional para coach de futebol com sistema de 4 planos, FAQ interativa, depoimentos reais e conversão otimizada via WhatsApp. Design esportivo e responsivo.</p>
+        <div class="project-tags">
+          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind</span><span class="tag">Responsive</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://ff-performance---felipe-fonseca.pages.dev" class="btn-demo" target="_blank" onclick="event.stopPropagation()">Ver Demo →</a>
+          <a href="https://github.com/ragelplays2000-jpg/ff-performance" class="btn-code" target="_blank" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Esportes Victurino -->
+    <div class="project-card" data-cats="web design" onclick="openLightbox(2)">
       <div class="project-thumb">
         <div class="project-thumb-icon">📸</div>
         <img src="assets/img/projects/davi.jpg" alt="Esportes Victurino">
@@ -1317,13 +1704,14 @@
           <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">GSAP</span><span class="tag">Masonry</span>
         </div>
         <div class="project-actions">
-          <a href="#" class="btn-demo" onclick="event.stopPropagation()">Ver Demo →</a>
-          <a href="#" class="btn-code" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
+          <a href="https://site-davi-victurino.pages.dev" class="btn-demo" target="_blank" onclick="event.stopPropagation()">Ver Demo →</a>
+          <a href="https://github.com/ragelplays2000-jpg/esportes-victurino" class="btn-code" target="_blank" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card" data-cats="automacao ia" onclick="openLightbox(1)">
+    <!-- DispatchIQ -->
+    <div class="project-card" data-cats="automacao ia" onclick="openLightbox(3)">
       <div class="project-thumb">
         <div class="project-thumb-icon">⚡</div>
         <img src="assets/img/projects/dispatchql.jpg" alt="DispatchIQ">
@@ -1337,31 +1725,13 @@
         </div>
         <div class="project-actions">
           <a href="#" class="btn-demo" onclick="event.stopPropagation()">Ver Demo →</a>
-          <a href="#" class="btn-code" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
+          <a href="https://github.com/ragelplays2000-jpg/dispatchiq" class="btn-code" target="_blank" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card" data-cats="ia web" onclick="openLightbox(2)">
-      <div class="project-thumb">
-        <div class="project-thumb-icon">🚀</div>
-        <img src="assets/img/projects/marley.jpg" alt="Sites e Landing Pages Pro">
-        <div class="project-status status-blue">Operacional</div>
-      </div>
-      <div class="project-body">
-        <div class="project-title">Sites & Landing Pages Pro</div>
-        <p class="project-desc">Infraestrutura completa de desenvolvimento com Skills especializadas, Design System e templates para criação rápida de sites profissionais sob demanda.</p>
-        <div class="project-tags">
-          <span class="tag">Claude Projects</span><span class="tag">Design System</span><span class="tag">Templates</span><span class="tag">IA</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="btn-demo" onclick="event.stopPropagation()">Ver Demo →</a>
-          <a href="#" class="btn-code" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card" data-cats="web design" onclick="openLightbox(3)">
+    <!-- Portfólio Pessoal -->
+    <div class="project-card" data-cats="web design" onclick="openLightbox(4)">
       <div class="project-thumb">
         <div class="project-thumb-icon">💻</div>
         <img src="assets/img/projects/projeto-portfolio.jpg" alt="Portfólio Pessoal Dark Neon">
@@ -1374,7 +1744,7 @@
           <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">GSAP</span><span class="tag">Particles.js</span>
         </div>
         <div class="project-actions">
-          <a href="#" class="btn-demo" onclick="event.stopPropagation()">Ver Demo →</a>
+          <a href="https://portfolio-rian.pages.dev" class="btn-demo" target="_blank" onclick="event.stopPropagation()">Ver Demo →</a>
           <a href="#" class="btn-code" onclick="event.stopPropagation()">Código &lt;/&gt;</a>
         </div>
       </div>
@@ -1390,6 +1760,161 @@
     <div id="lightbox-content"></div>
   </div>
 </div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-header">
+      <h2 class="section-title">&lt; Depoimentos /&gt;</h2>
+      <p class="section-subtitle">O que dizem sobre meu trabalho</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+        </div>
+        <p class="testimonial-text">"O Rian entregou um site profissional que superou minhas expectativas. A galeria ficou incrível e já tô recebendo contatos direto pelo site. Recomendo!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DV</div>
+          <div>
+            <div class="author-name">Davi Viturino</div>
+            <div class="author-role">Fotógrafo Esportivo — Esportes Victurino</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-stars">
+          <span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span>
+        </div>
+        <p class="testimonial-text">"Site entregue no prazo, design moderno e funcional. Sistema de planos ficou muito claro pros meus alunos. Trabalho de qualidade!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">FF</div>
+          <div>
+            <div class="author-name">Felipe Fonseca</div>
+            <div class="author-role">Coach de Futebol — FF Performance</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="section-header">
+      <h2 class="section-title">&lt; Perguntas Frequentes /&gt;</h2>
+      <p class="section-subtitle">Dúvidas? Tenho respostas.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Quanto tempo leva para criar um site?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>De 7 a 14 dias úteis, dependendo da complexidade. Landing pages simples: 5-7 dias. Sites completos: 10-14 dias. Sistemas customizados: 3-4 semanas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Vocês fazem manutenção mensal?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim! Oferecemos planos de manutenção a partir de R$200/mês incluindo: hospedagem, atualizações de segurança, correções de bugs, backup e suporte via WhatsApp.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>O site fica no meu nome?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim, 100%! Você é o dono completo do código-fonte, domínio e hospedagem. Após a entrega, tudo é transferido para suas contas.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Quais formas de pagamento vocês aceitam?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Aceitamos PIX (5% de desconto), transferência bancária ou cartão de crédito em até 3x sem juros. Para projetos acima de R$3.000, parcelamos em 40% + 30% + 30%.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Atendem todo Brasil?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sim! Embora esteja baseado em Salvador-BA, atendo clientes de todo o Brasil remotamente. Todo processo é feito online (reuniões, aprovações, entregas).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>E se eu não gostar do resultado?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Fazemos até 2 rodadas completas de ajustes incluídas no projeto até você aprovar. Seu feedback é essencial durante todo o processo.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results">
+  <div class="results-inner">
+    <div class="section-header">
+      <h2 class="section-title">&lt; Resultados Reais /&gt;</h2>
+      <p class="section-subtitle">Números que provam qualidade</p>
+    </div>
+    <div class="results-grid">
+
+      <div class="result-card">
+        <div class="result-icon">📈</div>
+        <span class="result-number" data-result="+15">+15</span>
+        <div class="result-label">contatos/semana</div>
+        <div class="result-desc">Gerados via sites desenvolvidos</div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-icon">⚡</div>
+        <span class="result-number" data-result="7-14">7-14</span>
+        <div class="result-label">dias</div>
+        <div class="result-desc">Prazo médio de entrega</div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-icon">💯</div>
+        <span class="result-number" data-result="100%">100%</span>
+        <div class="result-label">de satisfação</div>
+        <div class="result-desc">Clientes recomendam</div>
+      </div>
+
+      <div class="result-card">
+        <div class="result-icon">🎯</div>
+        <span class="result-number" data-result="R$1.875">R$1.875</span>
+        <div class="result-label">ticket médio</div>
+        <div class="result-desc">Valor médio por projeto</div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -1542,7 +2067,7 @@ function lerpCursor() {
 }
 lerpCursor();
 
-document.querySelectorAll('a, button, .project-card, .skill-card, .stat-card, .contact-card, .tab-btn, .filter-btn').forEach(el => {
+document.querySelectorAll('a, button, .project-card, .skill-card, .stat-card, .contact-card, .tab-btn, .filter-btn, .service-card, .testimonial-card, .result-card, .faq-question, .step-icon-wrap').forEach(el => {
   el.addEventListener('mouseenter', () => { cursor.classList.add('hover'); follower.classList.add('hover'); });
   el.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); follower.classList.remove('hover'); });
 });
@@ -1751,40 +2276,58 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 ═══════════════════════════════════════ */
 const projectData = [
   {
+    title:'Finance Dashboard — Gestão Financeira',
+    desc:'Sistema web profissional de gestão financeira desenvolvido com React 18, Firebase e Recharts. Controla vendas, clientes, projetos e gera relatórios automatizados com gráficos interativos. Inclui autenticação segura, banco de dados em tempo real (Firestore) e modo especial para gravação de conteúdo.',
+    tags:['React','Firebase','Tailwind','Recharts','Firestore'],
+    status:'Em Desenvolvimento',
+    demo:'https://finance-dashboard-4z2.pages.dev',
+    code:'https://github.com/ragelplays2000-jpg/finance-dashboard'
+  },
+  {
+    title:'FF Performance — Coach de Futebol',
+    desc:'Landing page profissional para coach de futebol com sistema de 4 planos, FAQ interativa, depoimentos reais e conversão otimizada via WhatsApp. Design esportivo e totalmente responsivo, focado em captar alunos online.',
+    tags:['HTML5','CSS3','Tailwind','Responsive'],
+    status:'Em Produção',
+    demo:'https://ff-performance---felipe-fonseca.pages.dev',
+    code:'https://github.com/ragelplays2000-jpg/ff-performance'
+  },
+  {
     title:'Esportes Victurino',
     desc:'Site profissional para fotógrafo esportivo com galeria dinâmica masonry, sistema de pacotes e integração WhatsApp para orçamentos automáticos. Projeto focado em performance e conversão.',
     tags:['HTML5','CSS3','GSAP','Masonry'],
-    status:'Em Produção'
+    status:'Em Produção',
+    demo:'https://site-davi-victurino.pages.dev',
+    code:'https://github.com/ragelplays2000-jpg/esportes-victurino'
   },
   {
     title:'DispatchIQ — Automação Operacional',
     desc:'Sistema inteligente para dispatch de técnicos com cálculo automático de deslocamento, análise de SLA e otimização de custo. Base de 185+ técnicos em todo Brasil, reduzindo tempo de alocação em 70%.',
     tags:['Claude AI','Automação','Excel','Dashboards'],
-    status:'Em Uso'
-  },
-  {
-    title:'Sites & Landing Pages Pro',
-    desc:'Infraestrutura completa de desenvolvimento com Skills especializadas, Design System e templates para criação rápida de sites profissionais sob demanda. Dezenas de projetos entregues via esse sistema.',
-    tags:['Claude Projects','Design System','Templates','IA'],
-    status:'Operacional'
+    status:'Em Uso',
+    demo:'#',
+    code:'https://github.com/ragelplays2000-jpg/dispatchiq'
   },
   {
     title:'Portfólio Pessoal Dark/Neon',
     desc:'Portfólio moderno com design system próprio, animações GSAP, glassmorphism, cursor customizado e performance 95+ no PageSpeed. Você está olhando para ele agora!',
     tags:['HTML5','CSS3','GSAP','Particles.js'],
-    status:'Você está aqui!'
+    status:'Você está aqui!',
+    demo:'https://portfolio-rian.pages.dev',
+    code:'#'
   }
 ];
 
 function openLightbox(idx) {
   const p = projectData[idx];
+  const demoAttr = p.demo && p.demo !== '#' ? `href="${p.demo}" target="_blank"` : 'href="#"';
+  const codeAttr = p.code && p.code !== '#' ? `href="${p.code}" target="_blank"` : 'href="#"';
   document.getElementById('lightbox-content').innerHTML = `
     <h2 style="font-family:var(--font-title);font-size:22px;color:var(--white);margin-bottom:12px;">${p.title}</h2>
     <p style="color:var(--gray-text);line-height:1.8;margin-bottom:20px;">${p.desc}</p>
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;">${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
     <div style="display:flex;gap:12px;">
-      <a href="#" class="btn-demo" style="flex:1;text-align:center;">Ver Demo →</a>
-      <a href="#" class="btn-code" style="flex:1;text-align:center;">Código &lt;/&gt;</a>
+      <a ${demoAttr} class="btn-demo" style="flex:1;text-align:center;">Ver Demo →</a>
+      <a ${codeAttr} class="btn-code" style="flex:1;text-align:center;">Código &lt;/&gt;</a>
     </div>
   `;
   document.getElementById('lightbox').classList.add('open');
@@ -1826,7 +2369,7 @@ function initHeroAnimations() {
     .call(type);
 
   // Scroll reveals
-  const sections = ['#about', '#skills', '#projects', '#contact'];
+  const sections = ['#about', '#skills', '#services', '#process', '#projects', '#testimonials', '#faq', '#results', '#contact'];
   sections.forEach(s => {
     gsap.from(`${s} .section-header`, {
       scrollTrigger: { trigger: s, start:'top 80%' },
@@ -1849,6 +2392,36 @@ function initHeroAnimations() {
   gsap.from('.contact-form .form-group', {
     scrollTrigger: { trigger:'#contact', start:'top 80%' },
     opacity:0, y:20, stagger:0.1, duration:0.5
+  });
+
+  // Services
+  gsap.from('.service-card', {
+    scrollTrigger: { trigger:'#services', start:'top 75%' },
+    opacity:0, y:40, stagger:0.15, duration:0.6
+  });
+
+  // Process steps
+  gsap.from('.process-step', {
+    scrollTrigger: { trigger:'#process', start:'top 75%' },
+    opacity:0, y:30, stagger:0.12, duration:0.5
+  });
+
+  // Testimonials
+  gsap.from('.testimonial-card', {
+    scrollTrigger: { trigger:'#testimonials', start:'top 80%' },
+    opacity:0, y:40, stagger:0.2, duration:0.6
+  });
+
+  // FAQ
+  gsap.from('.faq-item', {
+    scrollTrigger: { trigger:'#faq', start:'top 80%' },
+    opacity:0, x:-20, stagger:0.1, duration:0.5
+  });
+
+  // Results
+  gsap.from('.result-card', {
+    scrollTrigger: { trigger:'#results', start:'top 80%' },
+    opacity:0, y:30, stagger:0.12, duration:0.5
   });
 
   // Count-up
@@ -1906,6 +2479,24 @@ function countUp() {
       if(current >= target) clearInterval(timer);
     }, 33);
   });
+}
+
+/* ═══════════════════════════════════════
+   FAQ ACCORDION
+═══════════════════════════════════════ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+  // close all
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-answer').classList.remove('open');
+  });
+  if(!isOpen) {
+    item.classList.add('open');
+    answer.classList.add('open');
+  }
 }
 
 /* ═══════════════════════════════════════
