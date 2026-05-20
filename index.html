@@ -1191,9 +1191,12 @@
       .badge-1, .badge-2, .badge-3 { display: none; }
       .hero-desc { margin: 0 auto 36px; }
       .hero-buttons { justify-content: center; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
+      .social-links { margin-top: 16px; }
       .projects-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+      .contact-cards { gap: 8px; }
+      .contact-desc { margin-bottom: 16px; }
       #about, #skills, #contact, footer { padding-left: 32px; padding-right: 32px; }
       #about, #skills { padding-top: 80px; padding-bottom: 80px; }
       #projects { padding-left: 32px; padding-right: 32px; }
@@ -1214,8 +1217,9 @@
       .projects-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
       .footer-inner { flex-direction: column; align-items: center; text-align: center; }
-      #about, #skills { padding-top: 60px; padding-bottom: 60px; }
-      .contact-grid { gap: 20px; }
+      #about, #skills { padding-top: 48px; padding-bottom: 48px; }
+      .contact-grid { gap: 16px; }
+      #contact { padding-top: 48px; padding-bottom: 48px; }
       .process-step { flex: 0 0 100%; }
       .results-grid { grid-template-columns: 1fr 1fr; }
       #services, #process, #testimonials, #faq, #results { padding-top: 60px; padding-bottom: 60px; }
@@ -2384,11 +2388,11 @@ function initHeroAnimations() {
     opacity:0, y:30, stagger:0.15, duration:0.6
   });
   gsap.from('.stat-card', {
-    scrollTrigger: { trigger:'.stats-grid', start:'top 80%' },
+    scrollTrigger: { trigger:'.stats-grid', start:'top 95%' },
     opacity:0, y:30, stagger:0.1, duration:0.5
   });
   gsap.from('.contact-card', {
-    scrollTrigger: { trigger:'#contact', start:'top 80%' },
+    scrollTrigger: { trigger:'#contact', start:'top 95%' },
     opacity:0, x:-30, stagger:0.1, duration:0.5
   });
   gsap.from('.contact-form .form-group', {
